@@ -11,6 +11,17 @@
 |
 */
 
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
+
+Route::get('/aboutMe', function () {
+    return  view("aboutMe");
+});
+
+Route::get('/test','TestController@testQuery');
+

@@ -1,0 +1,31 @@
+header, nav, main, footer {
+    background: #cdcdcd;
+    margin: 10px 0;
+}
+
+main, header, footer {
+    padding: 20px;
+}
+
+header {
+    background: url(../svg/404.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+}
+
+header h1 {
+    color: #fff;
+    text-shadow: 1px 1px 5px #333;
+}
+
+.caps {
+    text-transform: uppercase;
+}
+
+.txt-red {
+    color: #000000;
+}
+h2 {
+    font-size: 16px;
+}

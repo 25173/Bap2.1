@@ -25,3 +25,22 @@ Route::get('/aboutMe', function () {
 
 Route::get('/test','TestController@testQuery');
 
+Route::get('/contactForm', 'FormController@showForm')
+     ->name('contact.form');
+
+Route::post('/contactForm', 'FormController@handleForm')
+     ->name('contact.form.handle');
+
+Route::get('/contact', function () {
+	return  view("contact");
+});
+
+Route::get('/toernooien', function () {
+	return  view("toernooien");
+});
+Route::get('/regels', function () {
+	return  view("regels");
+});
+Route::get('/sponsors', function () {
+	return  view("sponsors");
+});

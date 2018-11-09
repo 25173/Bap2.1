@@ -7,17 +7,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}"/>
-    <title>Mediacollege Amsterdam - @yield('title')</title>
+    <title>the flying dutchmen - @yield('title')</title>
 </head>
 <body>
 <div class="container">
+    @section('navigation')
+        NAVIGATION
+    @show
     <header>
         <h1>The Flying Dutchmen</h1>
         <h2 class="caps txt-red">@yield('page_title')</h2>
     </header>
-    @section('navigation')
-        NAVIGATION
-    @show
     <main>
         @yield('content')
     </main>

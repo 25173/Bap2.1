@@ -2,7 +2,7 @@
 {{-- Op deze manier schrijf je commentaar in een Blade template --}}
 
 {{-- Simpele korte tekstinhoud krijg je op deze manier in een section --}}
-@section('title', 'Homepage')
+@section('title', 'sponsor')
 
 {{-- Dit is de pagina titel in de header --}}
 @section('page_title', 'Wheelchair rugby')

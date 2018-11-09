@@ -8,7 +8,7 @@ main, header, footer {
 }
 
 header {
-    background: url(../svg/404.svg);
+    background: url(../svg/teamfoto.jpeg) center;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 300px;

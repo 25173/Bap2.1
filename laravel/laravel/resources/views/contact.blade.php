@@ -10,13 +10,13 @@
 
 {{-- Pagina inhoud voor de content section, langer en dus met @section --}}
 @section('content')
-    <h2>Welkom!</h2>
-    <p>
-        Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-    </p>
-    <p>
-        Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-    </p>
+    <h2>Neem contact met ons op!</h2>
+    <form action="">
+        @csrf
+        <label for="naam">naam</label>
+        <input type="text" id="naam" name="naam">
+        <input type="submit">
+    </form>
 @endsection
 {{-- Vergeet de @endsection niet! --}}
 

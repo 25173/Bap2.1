@@ -1,8 +1,9 @@
+
 @extends('layout.master')
 {{-- Op deze manier schrijf je commentaar in een Blade template --}}
 
 {{-- Simpele korte tekstinhoud krijg je op deze manier in een section --}}
-@section('title', 'sponsor')
+@section('title', 'Homepage')
 
 {{-- Dit is de pagina titel in de header --}}
 @section('page_title', 'Wheelchair rugby')
@@ -10,13 +11,24 @@
 
 {{-- Pagina inhoud voor de content section, langer en dus met @section --}}
 @section('content')
-    <h2>Welkom!</h2>
-    <p>
-        Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-    </p>
-    <p>
-        Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-    </p>
+    @if( session()->has('formData'))
+        <div class="well well-sm">
+            <h1>Bedankt</h1>
+            <p>Hier ziet u de opgestuurde gegevens:</p>
+            <p>
+                <strong>Voornaam:</strong> {{ session('formData.firstname') }}<br/>
+                <strong>Tussenvoegsel:</strong>
+                {{ session('formData.middlename') }}<br/>
+                <strong>Achternaam:</strong> {{ session('formData.lastname') }}<br/>
+                <strong>E-mail:</strong> {{ session('formData.email') }}<br/>
+                <strong>bericht:</strong> {{ session('formData.bericht')}}<br/>
+            </p>
+            <p>
+                <a href="{{ route('contact.form') }}">Terug naar het
+                    formulier</a>
+            </p>
+        </div>
+    @endif
 @endsection
 {{-- Vergeet de @endsection niet! --}}
 

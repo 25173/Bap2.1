@@ -8,11 +8,26 @@ class FormController extends Controller
 {
 	public function showForm()
 	{
-		return view('form.contactForm');
+		return view('contact');
 	}
 
-	public function handleForm()
+	public function handleForm(request $request)
 	{
-		return "FORM AFHANDELING";
+		$geldigeData = $request->validate(
+			[
+				'firstname' => 'required',
+				'middlename' => '',
+				'lastname' => 'required|min:2',
+				'email' => 'email |required',
+//				'Emails' => 'same:email | required|email',
+				'bericht' => 'required|min:2',
+			]
+		);
+		return redirect()->route('registration.confirmation')->with('formData', $geldigeData);
+	}
+
+	public function confirmationPage()
+	{
+		return view('confirmation');
 	}
 }

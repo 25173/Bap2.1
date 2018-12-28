@@ -11,12 +11,9 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
-Route::get('/', function () {
-    return view('homepage');
+Route::get('', function () {
+    return view('index');
 });
 
 Route::get('/aboutMe', function () {
@@ -25,15 +22,11 @@ Route::get('/aboutMe', function () {
 
 Route::get('/test','TestController@testQuery');
 
-Route::get('/contactForm', 'FormController@showForm')
-     ->name('contact.form');
+Route::get('/contact', 'FormController@showForm')
+     ->name('contact');
 
-Route::post('/contactForm', 'FormController@handleForm')
-     ->name('contact.form.handle');
-
-Route::get('/contact', function () {
-	return  view("contact");
-});
+Route::post('/contact', 'FormController@handleForm')
+     ->name('contact.handle');
 
 Route::get('/toernooien', function () {
 	return  view("toernooien");
@@ -44,3 +37,14 @@ Route::get('/regels', function () {
 Route::get('/sponsors', function () {
 	return  view("sponsors");
 });
+
+
+
+Route::get('/photo-gallery', 'PhotoGalleryController@listPhotos')
+     ->name('gallery.index');
+
+Route::get('/photo-gallery/add_photo', 'PhotoGalleryController@showPhotoForm')
+     ->name('gallery.add_photo');
+
+Route::post('/photo-gallery/add-gallery', 'PhotoGalleryController@savePhotoForm')
+     ->name('gallery.save_photo');
